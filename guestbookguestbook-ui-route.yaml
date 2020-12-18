@@ -1,0 +1,63 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  creationTimestamp: '2020-12-10T03:11:11Z'
+  labels:
+    app.kubernetes.io/instance: guestbook
+  managedFields:
+    - apiVersion: route.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/instance': {}
+        'f:spec':
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+      manager: kubectl-expose
+      operation: Update
+      time: '2020-12-10T03:11:11Z'
+    - apiVersion: route.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      manager: openshift-router
+      operation: Update
+      time: '2020-12-10T03:11:11Z'
+  name: guestbook-ui
+  namespace: argocd-example-apps
+  resourceVersion: '445577'
+  selfLink: >-
+    /apis/route.openshift.io/v1/namespaces/argocd-example-apps/routes/guestbook-ui
+  uid: 698c4022-7060-4753-9cdd-5c8b4fdbae3a
+spec:
+  host: >-
+    guestbook-ui-argocd-example-apps.apps.yoshida-test-ipi-cluster.yossitestipi.cf
+  port:
+    targetPort: 80
+  to:
+    kind: Service
+    name: guestbook-ui
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+    - conditions:
+        - lastTransitionTime: '2020-12-10T03:11:11Z'
+          status: 'True'
+          type: Admitted
+      host: >-
+        guestbook-ui-argocd-example-apps.apps.yoshida-test-ipi-cluster.yossitestipi.cf
+      routerCanonicalHostname: apps.yoshida-test-ipi-cluster.yossitestipi.cf
+      routerName: default
+      wildcardPolicy: None
