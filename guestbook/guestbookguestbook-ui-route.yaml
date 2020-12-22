@@ -44,10 +44,8 @@ metadata:
             'f:kubectl.kubernetes.io/last-applied-configuration': {}
       manager: argocd-application-controller
       operation: Update
-      time: '2020-12-22T08:49:46Z'
   name: guestbook-ui
   namespace: argocd-example-apps
-  resourceVersion: '1025044'
   selfLink: >-
     /apis/route.openshift.io/v1/namespaces/argocd-example-apps/routes/guestbook-ui
   uid: 698c4022-7060-4753-9cdd-5c8b4fdbae3a
